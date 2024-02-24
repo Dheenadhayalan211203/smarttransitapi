@@ -1,13 +1,16 @@
 const mongoose=require('mongoose');
 const rout1=new mongoose.Schema({
-    routno:{
-        type:Number
+    route:{
+        type:Number,
+        required:true
     },
-    count:{
-        type:Number
+    stop:{
+        type:Number,
+        required:true
     },
-    ticketcount:{
-        type:Number
+    ticketCount:{
+        type:Number,
+        required:true
 
     },
     qrcodeurl :{
