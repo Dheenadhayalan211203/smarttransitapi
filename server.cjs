@@ -33,7 +33,7 @@ const port =process.env.PORT||8000
     })
     var reqno=Math.floor(Math.random() * 50);
 
-    const url="https://smarttransitapi.onrender.com"+"/deletereq"+"reqno"
+    const url="https://smarttransitapi.onrender.com"+"/deletereq"+reqno
     Qrcode.toDataURL(url,(err,qrcodeurl)=>{
       if(err){
         res.status(500).send("Internal Server error")
