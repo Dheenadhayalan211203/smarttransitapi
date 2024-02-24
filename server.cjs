@@ -26,21 +26,20 @@ const port =process.env.PORT||8000
  app.post('/addcount-rout1',async function(req,res){
 
    try{
-    await Rout1.create ({'routno': 1 ,
-    "count": req.body.count 
-       
-    
-    })
-    var reqno=Math.floor(Math.random() * 50);
+   
+    var routno=()=>{
+      Math.floor(Math.random() * 10)
+    }
 
-    const url="https://smarttransitapi.onrender.com"+"/deletereq"+reqno
+    const url="https://smarttransitapi.onrender.com/deleteticket"+routno
     Qrcode.toDataURL(url,(err,qrcodeurl)=>{
       if(err){
         res.status(500).send("Internal Server error")
       }
       else {
-        Rout1.create({'routno': 1,
-        "count": req.body.count,
+        Rout1.create({'route': 1,
+        "stop": req.body.count,
+        "ticketCount": req.body.tickets,
         "qrcodeurl": qrcodeurl }
         
           
@@ -58,6 +57,7 @@ const port =process.env.PORT||8000
 
  })
 
+ 
 
 
 
