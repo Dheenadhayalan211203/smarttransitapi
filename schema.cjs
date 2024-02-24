@@ -6,6 +6,10 @@ const rout1=new mongoose.Schema({
     count:{
         type:Number
     },
+    ticketcount:{
+        type:Number
+
+    },
     qrcodeurl :{
         type:String
     }
