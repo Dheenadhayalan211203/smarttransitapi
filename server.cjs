@@ -38,8 +38,8 @@ const port =process.env.PORT||8000
       }
       else {
         Rout1.create({'route': 1,
-        "stop": req.body.count,
-        "ticketCount": req.body.tickets,
+        "stop": req.body.stop,
+        "ticketCount": req.body.ticketcount,
         "qrcodeurl": qrcodeurl }
         
           
